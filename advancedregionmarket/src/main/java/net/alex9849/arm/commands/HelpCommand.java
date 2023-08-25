@@ -15,14 +15,14 @@ import java.util.List;
 
 public class HelpCommand extends BasicArmCommand {
 
-    private final String regex_args = "(?i)help [0-9]+";
+    private final String regex_args = "(?i)pomoc [0-9]+";
     private CommandHandler cmdHandler;
     private String headline;
     private String[] betweenCmds;
 
     public HelpCommand(CommandHandler cmdHandler, AdvancedRegionMarket plugin, String headline, String[] betweenCmds, String permission) {
-        super(true, plugin, "help", Arrays.asList("(?i)help [0-9]+", "(?i)help"),
-                Arrays.asList("help", "help [page]"), Arrays.asList(permission));
+        super(true, plugin, "pomoc", Arrays.asList("(?i)pomoc [0-9]+", "(?i)pomoc"),
+                Arrays.asList("pomoc", "help [strona]"), Arrays.asList(permission));
         this.cmdHandler = cmdHandler;
         this.headline = headline;
         this.betweenCmds = betweenCmds;

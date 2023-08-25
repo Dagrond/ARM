@@ -67,7 +67,7 @@ public class CommandHandler implements TabCompleter {
             args[i] = args[i].toLowerCase();
         }
 
-        if (command.getName().equalsIgnoreCase("arm")) {
+        if (command.getName().equalsIgnoreCase("dzialka")) {
             returnme.addAll(this.onTabComplete(player, args));
         }
 

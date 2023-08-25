@@ -20,7 +20,7 @@ public class InfoCommand extends BasicArmCommand {
     public InfoCommand(AdvancedRegionMarket plugin) {
         super(true, plugin, "info",
                 Arrays.asList("(?i)info [^;\n ]+"),
-                Arrays.asList("info [GROUPNAME]"),
+                Arrays.asList("info [tier]"),
                 Arrays.asList(Permission.MEMBER_ENTITYLIMIT_INFO));
     }
 

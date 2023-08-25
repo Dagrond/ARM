@@ -18,28 +18,33 @@ import java.util.List;
 public class TPCommand extends BasicArmCommand {
 
     public TPCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "tp",
-                Arrays.asList("(?i)tp [^;\n ]+"),
-                Arrays.asList("tp [REGION]"),
+        super(false, plugin, "dom",
+                Arrays.asList("(?i)dom", "(?i)dom [^;\n ]+"),
+                Arrays.asList("dom [dzialka]"),
                 Arrays.asList(Permission.MEMBER_TP, Permission.ADMIN_TP));
     }
 
     @Override
     protected boolean runCommandLogic(CommandSender sender, String command, String commandLabel) throws InputException {
         Player player = (Player) sender;
-        Region region = getPlugin().getRegionManager()
-                .getRegionbyNameAndWorldCommands(command.split(" ")[1], player.getWorld().getName());
+        Region region;
+        String[] args = command.split(" ");
+        if (args.length > 1) {
+            region = getPlugin().getRegionManager()
+                    .getRegionbyNameAndWorldCommands(args[1], player.getWorld().getName());
 
-        if (region == null) {
-            throw new InputException(sender, Messages.REGION_DOES_NOT_EXIST);
-        }
-
-        if (!region.getRegion().hasMember(player.getUniqueId()) && !region.getRegion().hasOwner(player.getUniqueId())) {
-            if (!player.hasPermission(Permission.ADMIN_TP)) {
-                throw new InputException(sender, Messages.NOT_A_MEMBER_OR_OWNER);
+            if (region == null) {
+                throw new InputException(sender, Messages.REGION_DOES_NOT_EXIST);
             }
-        }
 
+            if (!region.getRegion().hasMember(player.getUniqueId()) && !region.getRegion().hasOwner(player.getUniqueId())) {
+                if (!player.hasPermission(Permission.ADMIN_TP)) {
+                    throw new InputException(sender, Messages.NOT_A_MEMBER_OR_OWNER);
+                }
+            }
+        } else {
+            region = getPlugin().getRegionManager().getRegionsByOwner(player.getUniqueId()).get(0);
+        }
         try {
             Teleporter.teleport(player, region);
         } catch (NoSaveLocationException e) {
@@ -50,16 +55,17 @@ public class TPCommand extends BasicArmCommand {
 
     @Override
     protected List<String> onTabCompleteArguments(Player player, String[] args) {
-        if(args.length != 2) {
+        if (args.length == 2) {
+            PlayerRegionRelationship playerRegionRelationship = null;
+            if (player.hasPermission(Permission.ADMIN_TP)) {
+                playerRegionRelationship = PlayerRegionRelationship.ALL;
+            } else {
+                playerRegionRelationship = PlayerRegionRelationship.MEMBER_OR_OWNER;
+            }
+            return getPlugin().getRegionManager()
+                    .completeTabRegions(player, args[1], playerRegionRelationship, true, true);
+        } else {
             return new ArrayList<>();
         }
-        PlayerRegionRelationship playerRegionRelationship = null;
-        if (player.hasPermission(Permission.ADMIN_TP)) {
-            playerRegionRelationship = PlayerRegionRelationship.ALL;
-        } else {
-            playerRegionRelationship = PlayerRegionRelationship.MEMBER_OR_OWNER;
-        }
-        return getPlugin().getRegionManager()
-                .completeTabRegions(player, args[1], playerRegionRelationship, true, true);
     }
 }

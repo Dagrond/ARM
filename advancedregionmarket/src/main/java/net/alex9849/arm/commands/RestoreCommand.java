@@ -21,12 +21,12 @@ import java.util.logging.Level;
 import java.util.stream.Collectors;
 
 public class RestoreCommand extends BasicArmCommand {
-    private final String regex_with_args = "(?i)restore [^;\n ]+";
+    private final String regex_with_args = "(?i)resetuj [^;\n ]+";
 
     public RestoreCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "restore",
-                Arrays.asList("(?i)restore", "(?i)restore [^;\n ]+"),
-                Arrays.asList("restore", "restore [REGION]"),
+        super(false, plugin, "resetuj",
+                Arrays.asList("(?i)resetuj", "(?i)resetuj [^;\n ]+"),
+                Arrays.asList("resetuj", "resetuj [dzialka]"),
                 Arrays.asList(Permission.ADMIN_RESTORE, Permission.MEMBER_RESTORE));
     }
 

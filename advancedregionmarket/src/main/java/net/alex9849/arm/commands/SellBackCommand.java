@@ -15,12 +15,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SellBackCommand extends BasicArmCommand {
-    private final String regex_nomoney = "(?i)sellback [^;\n ]+ (?i)nomoney";
+    private final String regex_nomoney = "(?i)usun [^;\n ]+ (?i)bezpieniedzy";
 
     public SellBackCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "sellback",
-                Arrays.asList("(?i)sellback [^;\n ]+", "(?i)sellback [^;\n ]+ (?i)nomoney"),
-                Arrays.asList("sellback [REGION]"),
+        super(false, plugin, "usun",
+                Arrays.asList("(?i)usun", "(?i)usun [^;\n ]+", "(?i)usun [^;\n ]+ (?i)bezpieniedzy"),
+                Arrays.asList("usun [dzialka]"),
                 Arrays.asList(Permission.MEMBER_SELLBACK));
     }
 
@@ -28,12 +28,17 @@ public class SellBackCommand extends BasicArmCommand {
     protected boolean runCommandLogic(CommandSender sender, String command, String commandLabel) throws InputException {
         Player player = (Player) sender;
         boolean noMoney = false;
-
-        Region region = getPlugin().getRegionManager()
-                .getRegionbyNameAndWorldCommands(command.split(" ")[1], player.getLocation().getWorld().getName());
-
+        Region region = null;
+        if (command.split(" ").length > 1) {
+            region = getPlugin().getRegionManager()
+                    .getRegionbyNameAndWorldCommands(command.split(" ")[1], player.getLocation().getWorld().getName());
+        }
         if (region == null) {
-            throw new InputException(player, Messages.REGION_DOES_NOT_EXIST);
+            region = getPlugin().getRegionManager().getRegionsByLocation(player.getLocation()).get(0);
+            if (region == null) {
+                player.sendMessage("§cMusisz stać na działce, którą chcesz usunąć!");
+                return true;
+            }
         }
         if (!region.getRegion().hasOwner(player.getUniqueId())) {
             throw new InputException(player, Messages.REGION_NOT_OWN);
@@ -60,8 +65,8 @@ public class SellBackCommand extends BasicArmCommand {
             returnme.addAll(getPlugin().getRegionManager()
                     .completeTabRegions(player, args[1], PlayerRegionRelationship.OWNER, true, true));
         } else if(args.length == 3) {
-            if("nomoney".toLowerCase().startsWith(args[2])) {
-                returnme.add("nomoney");
+            if("bezpieniedzy".toLowerCase().startsWith(args[2])) {
+                returnme.add("bezpieniedzy");
             }
         }
         return returnme;

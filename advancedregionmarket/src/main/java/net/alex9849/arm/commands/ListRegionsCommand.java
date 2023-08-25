@@ -17,12 +17,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ListRegionsCommand extends BasicArmCommand {
-    private final String regex_with_args = "(?i)listregions [^;\n ]+";
+    private final String regex_with_args = "(?i)lista [^;\n ]+";
 
     public ListRegionsCommand(AdvancedRegionMarket plugin) {
-        super(true, plugin, "listregions",
-                Arrays.asList("(?i)listregions", "(?i)listregions [^;\n ]+"),
-                Arrays.asList("listregions", "listregions [PLAYER]"),
+        super(true, plugin, "lista",
+                Arrays.asList("(?i)lista", "(?i)lista [^;\n ]+"),
+                Arrays.asList("lista", "lista [gracz]"),
                 Arrays.asList(Permission.MEMBER_LISTREGIONS, Permission.ADMIN_LISTREGIONS));
     }
 
@@ -46,10 +46,10 @@ public class ListRegionsCommand extends BasicArmCommand {
                 .getRegionManager().getRegionsByOwner(oplayer.getUniqueId());
         List<Region> regionsMember = getPlugin()
                 .getRegionManager().getRegionsByMember(oplayer.getUniqueId());
-
-        sender.sendMessage(ChatColor.GOLD + "Owner: " + Messages
+        sender.sendMessage(ChatColor.GREEN + "Działki do których należysz:");
+        sender.sendMessage(ChatColor.WHITE + "Jako Właściciel: " + ChatColor.GREEN + Messages
                 .getStringList(regionsOwner, x -> x.getRegion().getId(), ", "));
-        sender.sendMessage(ChatColor.GOLD + "Member: " + Messages
+        sender.sendMessage(ChatColor.WHITE + "Jako Członek: " + ChatColor.GREEN + Messages
                 .getStringList(regionsMember, x -> x.getRegion().getId(), ", "));
         return true;
     }

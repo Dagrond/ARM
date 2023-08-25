@@ -21,7 +21,7 @@ public class TerminateCommand extends BasicArmCommand {
         super(false, plugin, "terminate",
                 Arrays.asList("(?i)terminate [^;\n ]+ (false|true)", "(?i)terminate (false|true)"),
                 Arrays.asList("terminate [REGION] [true/false]", "terminate [true/false]"),
-                Arrays.asList(Permission.MEMBER_BUY, Permission.ADMIN_TERMINATE_CONTRACT));
+                Arrays.asList(Permission.ADMIN_TERMINATE_CONTRACT));
     }
 
     @Override

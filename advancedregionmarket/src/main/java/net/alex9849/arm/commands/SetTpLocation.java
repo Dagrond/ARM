@@ -18,16 +18,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SetTpLocation extends BasicArmCommand {
-    private static final String regex = "(?)settplocation";
-    private static final String regex_delete = "(?i)settplocation (?i)delete";
-    private static final String regex_with_args = "(?i)settplocation [^;\n ]+";
-    private static final String regex_with_args_delete = "(?i)settplocation [^;\n ]+ (?i)delete";
+    private static final String regex = "(?)ustawdom";
+    private static final String regex_delete = "(?i)ustawdom (?i)usun";
+    private static final String regex_with_args = "(?i)ustawdom [^;\n ]+";
+    private static final String regex_with_args_delete = "(?i)ustawdom [^;\n ]+ (?i)usun";
 
 
     public SetTpLocation(AdvancedRegionMarket plugin) {
-        super(false, plugin, "settplocation",
+        super(false, plugin, "ustawdom",
                 Arrays.asList(regex, regex_delete, regex_with_args, regex_with_args_delete),
-                Arrays.asList("settplocation delete", "settplocation"),
+                Arrays.asList("ustawdom usun", "ustawdom"),
                 Arrays.asList(Permission.MEMBER_SET_TP_LOCATION, Permission.ADMIN_SET_TP_LOCATION));
     }
 
@@ -78,12 +78,12 @@ public class SetTpLocation extends BasicArmCommand {
                 prr = PlayerRegionRelationship.ALL;
             }
             returnMe.addAll(getPlugin().getRegionManager().completeTabRegions(player, args[1], prr, true, true));
-            if("delete".startsWith(args[1])) {
-                returnMe.add("delete");
+            if("usun".startsWith(args[1])) {
+                returnMe.add("usun");
             }
         }
-        if (args.length == 3 && "delete".startsWith(args[2])) {
-            returnMe.add("delete");
+        if (args.length == 3 && "usun".startsWith(args[2])) {
+            returnMe.add("usun");
         }
         return returnMe;
     }

@@ -15,13 +15,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GuiCommand extends BasicArmCommand {
-    private static final String GUI_REGEX = "(?i)gui";
-    private static final String REGION_GUI_REGEX = "(?i)gui [^;\n ]+";
+    private static final String GUI_REGEX = "(?i)menu";
+    private static final String REGION_GUI_REGEX = "(?i)menu [^;\n ]+";
 
     public GuiCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "gui",
+        super(false, plugin, "menu",
                 Arrays.asList(GUI_REGEX, REGION_GUI_REGEX),
-                Arrays.asList("gui", "gui [REGION]"),
+                Arrays.asList("menu", "menu [działka]"),
                 Arrays.asList(Permission.MEMBER_GUI));
     }
 

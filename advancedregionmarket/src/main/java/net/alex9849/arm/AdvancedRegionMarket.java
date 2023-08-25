@@ -363,6 +363,9 @@ public class AdvancedRegionMarket extends JavaPlugin {
         commands.add(new UnsellCommand(this));
         commands.add(new UpdateSchematicCommand(this));
         commands.add(new BuyCommand(this));
+        commands.add(new PrzeniesCommand(this));
+        commands.add(new UlepszCommand(this));
+        commands.add(new ZmienbiomCommand(this));
         commands.add(new SellBackCommand(this));
         commands.add(new SetSubregionLimit(this));
         commands.add(new SetMaxMembersCommand(this));
@@ -377,7 +380,7 @@ public class AdvancedRegionMarket extends JavaPlugin {
         commands.add(new SetProtectionOfContinuance(this));
         commands.add(new AddTimeCommand(this));
 
-        List<String> entityLimtUsage = new ArrayList<>(Arrays.asList("entitylimit [SETTING]", "entitylimit help"));
+        List<String> entityLimtUsage = new ArrayList<>(Arrays.asList("limity [ustawienie]", "limity pomoc"));
         List<BasicArmCommand> entityLimitCommands = new ArrayList<>();
         entityLimitCommands.add(new CreateCommand(this));
         entityLimitCommands.add(new net.alex9849.arm.entitylimit.commands.DeleteCommand(this));
@@ -388,7 +391,7 @@ public class AdvancedRegionMarket extends JavaPlugin {
         entityLimitCommands.add(new CheckCommand(this));
         entityLimitCommands.add(new SetExtraLimitCommand(this));
         entityLimitCommands.add(new BuyExtraCommand(this));
-        commands.add(new CommandSplitter("entitylimit", this, entityLimtUsage, Permission.ADMIN_ENTITYLIMIT_HELP, Messages.ENTITYLIMIT_HELP_HEADLINE, entityLimitCommands));
+        commands.add(new CommandSplitter("limity", this, entityLimtUsage, Permission.ADMIN_ENTITYLIMIT_HELP, Messages.ENTITYLIMIT_HELP_HEADLINE, entityLimitCommands));
 
         List<String> regionKindUsage = new ArrayList<>(Arrays.asList("regionkind [SETTING]", "regionkind help"));
         List<BasicArmCommand> regionKindCommands = new ArrayList<>();
@@ -508,7 +511,7 @@ public class AdvancedRegionMarket extends JavaPlugin {
         commands.add(new CommandSplitter("rentpreset", this, rentPresetUsage, Permission.ADMIN_PRESET_HELP,
                 Messages.RENTPRESET_HELP_HEADLINE, rentPresetCommands));
         this.commandHandler.addCommands(commands);
-        getCommand("arm").setTabCompleter(this.commandHandler);
+        getCommand("dzialka").setTabCompleter(this.commandHandler);
     }
 
     private boolean setupEconomy() {
@@ -849,7 +852,7 @@ public class AdvancedRegionMarket extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandsLabel, String[] args) {
-        if (!cmd.getName().equalsIgnoreCase("arm")) {
+        if (!cmd.getName().equalsIgnoreCase("dzialka")) {
             return true;
         }
         try {

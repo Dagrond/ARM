@@ -1,4 +1,4 @@
-package net.alex9849.arm.entitylimit.commands;
+    package net.alex9849.arm.entitylimit.commands;
 
 import net.alex9849.arm.AdvancedRegionMarket;
 import net.alex9849.arm.Messages;
@@ -18,14 +18,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BuyExtraCommand extends BasicArmCommand {
-    private final String rootCommand = "buyextra";
-    private final String regex = "(?i)buyextra [^;\n ]+ [^;\n ]+";
-    private final List<String> usage = new ArrayList<>(Arrays.asList("buyextra [REGION] [ENTITYTYPE]"));
+    private final String rootCommand = "kup";
+    private final String regex = "(?i)kup [^;\n ]+ [^;\n ]+";
+    private final List<String> usage = new ArrayList<>(Arrays.asList("buyextra [kup] [stworzenie]"));
 
     public BuyExtraCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "buyextra",
-                Arrays.asList("(?i)buyextra [^;\n ]+ [^;\n ]+"),
-                Arrays.asList("buyextra [REGION] [ENTITYTYPE]"),
+        super(false, plugin, "kup",
+                Arrays.asList("(?i)kup [^;\n ]+ [^;\n ]+"),
+                Arrays.asList("kup [dzialka] [stworzenie]"),
                 Arrays.asList(Permission.MEMBER_ENTITYLIMIT_BUY_EXTRA));
     }
 
@@ -52,7 +52,7 @@ public class BuyExtraCommand extends BasicArmCommand {
                 true, true, true, true, true,
                 false, false, false);
 
-        if (args[2].equalsIgnoreCase("total")) {
+        if (args[2].equalsIgnoreCase("wszystkie")) {
 
             if (region.getEntityLimitGroup().getHardLimit() <= region.getEntityLimitGroup().getSoftLimit(region.getExtraTotalEntitys())) {
                 throw new InputException(player, region.getEntityLimitGroup().replaceVariables(Messages.ENTITYLIMITGROUP_EXTRA_ENTITIES_HARDLIMIT_REACHED, entities, region.getExtraTotalEntitys()));

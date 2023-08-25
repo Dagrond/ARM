@@ -17,12 +17,12 @@ import java.util.List;
 
 public class AddMemberCommand extends BasicArmCommand {
 
-    private final String regex_with_args = "(?i)addmember [^;\n ]+ [^;\n ]+";
+    private final String regex_with_args = "(?i)dodaj [^;\n ]+ [^;\n ]+";
 
     public AddMemberCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "addmember",
-                Arrays.asList("(?i)addmember [^;\n ]+ [^;\n ]+", "(?i)addmember [^;\n ]+"),
-                Arrays.asList("addmember [REGION] [NEWMEMBER]", "addmember [NEWMEMBER]"),
+        super(false, plugin, "dodaj",
+                Arrays.asList("(?i)dodaj [^;\n ]+ [^;\n ]+", "(?i)dodaj [^;\n ]+"),
+                Arrays.asList("dodaj [dzialka] [gracz]", "dodaj [gracz]"),
                 Arrays.asList(Permission.MEMBER_ADDMEMBER, Permission.ADMIN_ADDMEMBER));
     }
 

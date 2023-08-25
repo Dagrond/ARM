@@ -15,12 +15,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ExtendCommand extends BasicArmCommand {
-    private final String regex_with_args = "(?i)extend [^;\n ]+";
+    private final String regex_with_args = "(?i)przedluz [^;\n ]+";
 
     public ExtendCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "extend",
-                Arrays.asList("(?i)extend [^;\n ]+", "(?i)extend"),
-                Arrays.asList("extend [REGION]", "extend"),
+        super(false, plugin, "przedluz",
+                Arrays.asList("(?i)przedluz [^;\n ]+", "(?i)przedluz"),
+                Arrays.asList("przedluz [działka]", "przedluz"),
                 Arrays.asList(Permission.MEMBER_BUY));
     }
 

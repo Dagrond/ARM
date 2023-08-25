@@ -16,12 +16,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FlageditorCommand extends BasicArmCommand {
-    private final String regex_with_args = "(?i)flageditor [^;\n ]+";
+    private final String regex_with_args = "(?i)ustawienia [^;\n ]+";
 
     public FlageditorCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "flageditor",
-                Arrays.asList("(?i)flageditor [^;\n ]+", "(?i)flageditor"),
-                Arrays.asList("flageditor [REGION]", "flageditor"),
+        super(false, plugin, "ustawienia",
+                Arrays.asList("(?i)ustawienia [^;\n ]+", "(?i)ustawienia"),
+                Arrays.asList("ustawienia [dzialka]", "ustawienia"),
                 Arrays.asList(Permission.MEMBER_FLAGEDITOR, Permission.ADMIN_FLAGEDITOR));
     }
 

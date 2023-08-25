@@ -135,6 +135,8 @@ public class Permission {
     public static final String MEMBER_OFFER_ANSWER = "arm.member.offer.answer";
     public static final String MEMBER_PROMOTE = "arm.member.promote";
     public static final String MEMBER_BUY = "arm.member.buy";
+    public static final String MEMBER_MOVE = "arm.member.move";
+    public static final String MEMBER_UPGRADE = "arm.member.upgrade";
     public static final String MEMBER_REGIONFINDER = "arm.member.regionfinder";
     public static final String MEMBER_REGIONFINDER_TP_TO_REGION = "arm.member.regionfinder.tptoregion";
     public static final String MEMBER_REGIONFINDER_TP_TO_SIGN = "arm.member.regionfinder.tptosign";

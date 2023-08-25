@@ -16,12 +16,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RemoveMemberCommand extends BasicArmCommand {
-    private final String regex_with_args = "(?i)removemember [^;\n ]+ [^;\n ]+";
+    private final String regex_with_args = "(?i)wyrzuc [^;\n ]+ [^;\n ]+";
 
     public RemoveMemberCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "removemember",
-                Arrays.asList("(?i)removemember [^;\n ]+", "(?i)removemember [^;\n ]+ [^;\n ]+"),
-                Arrays.asList("removemember [MEMBER]", "removemember [REGION] [MEMBER]"),
+        super(false, plugin, "wyrzuc",
+                Arrays.asList("(?i)wyrzuc [^;\n ]+", "(?i)wyrzuc [^;\n ]+ [^;\n ]+"),
+                Arrays.asList("wyrzuc [gracz]", "wyrzuc [dzialka] [gracz]"),
                 Arrays.asList(Permission.MEMBER_REMOVEMEMBER, Permission.ADMIN_REMOVEMEMBER));
     }
 

@@ -17,14 +17,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CheckCommand extends BasicArmCommand {
-    private final String rootCommand = "check";
-    private final String regex = "(?i)check [^;\n ]+";
-    private final List<String> usage = new ArrayList<>(Arrays.asList("check [REGION]"));
+    private final String rootCommand = "sprawdz";
+    private final String regex = "(?i)sprawdz [^;\n ]+";
+    private final List<String> usage = new ArrayList<>(Arrays.asList("sprawdz [dzialka]"));
 
     public CheckCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "check",
-                Arrays.asList("(?i)check [^;\n ]+"),
-                Arrays.asList("check [REGION]"),
+        super(false, plugin, "sprawdz",
+                Arrays.asList("(?i)sprawdz [^;\n ]+"),
+                Arrays.asList("sprawdz [dzialka]"),
                 Arrays.asList(Permission.MEMBER_ENTITYLIMIT_CHECK));
     }
 

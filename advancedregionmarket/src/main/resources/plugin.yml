@@ -8,11 +8,11 @@ authors:
 api-version: 1.13
 prefix: AdvancedRegionMarket
 commands:
-  arm:
-    description: Shows the help page of ARM
-    usage: /arm help
-    permission-message: You don't have <permission>
-    aliases: [regionmarket]
+  dzialka:
+    description: Pokaż pomoc działek.
+    usage: /dzialka pomoc
+    permission-message: Nie posiadasz odpowiednich uprawnień!
+    aliases: [dzialki, d]
 permissions:
   arm.*:
     description: Give access to all commands of AdvancedRegionMarket
@@ -128,6 +128,8 @@ permissions:
       arm.member.offer.answer: true
       arm.member.promote: true
       arm.member.buy: true
+      arm.member.move: true
+      arm.member.upgrade: true
       arm.member.regionfinder: true
       arm.member.regionfinder.tptoregion: true
       arm.member.regionfinder.tptosign: true
@@ -157,6 +159,8 @@ permissions:
       arm.member.offer.answer: true
       arm.member.promote: true
       arm.member.buy: true
+      arm.member.move: true
+      arm.member.upgrade: true
       arm.member.regionfinder: true
       arm.member.regionfinder.tptoregion: true
       arm.member.regionfinder.tptosign: true
@@ -500,6 +504,12 @@ permissions:
     default: true
   arm.member.buy:
     description: Allows to buy regions
+    default: true
+  arm.member.move:
+    description: Allows to move region
+    default: true
+  arm.member.upgrade:
+    description: Allows to upgrade region
     default: true
   arm.member.regionfinder:
     description: Allows to use the regionfinder
