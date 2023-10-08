@@ -1,9 +1,11 @@
 /target
-
+target/
 .project
 .metadata
 bin/
 tmp/
+*.jar
+*.class
 *.tmp
 *.bak
 *.swp
