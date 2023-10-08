@@ -128,6 +128,10 @@ public class RegionManager extends YamlFileManager<Region> {
                     }
                 }
             }
+            loadedRegions.sort(Comparator.comparingInt(region -> {
+                String name = region.getRegion().getId();
+                return name.matches(".*\\d") ? Integer.parseInt(name.replaceAll("\\D", "")) : -1;
+            }));
         }
 
         if (fileupdated) {

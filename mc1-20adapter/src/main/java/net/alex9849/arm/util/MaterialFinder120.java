@@ -15,11 +15,11 @@ public class MaterialFinder120 extends MaterialFinder114 {
 
     @Override
     public Material getHangingSign() {
-        return Material.OAK_HANGING_SIGN;
+        return Material.SPRUCE_HANGING_SIGN;
     }
 
     @Override
     public Material getWallHangingSign() {
-        return Material.OAK_WALL_HANGING_SIGN;
+        return Material.SPRUCE_WALL_HANGING_SIGN;
     }
 }

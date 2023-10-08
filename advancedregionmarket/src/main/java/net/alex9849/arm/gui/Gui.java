@@ -246,7 +246,7 @@ public class Gui implements Listener {
                 flagSettingsDescription.set(j, region.replaceVariables(flagSettingsDescription.get(j)));
             }
             ClickItem flagItem = new ClickItem(GuiConstants.getFlagItem())
-                    .setName(rgFlag.getName())
+                    .setName("§2§lUstawienie: ")
                     .setLore(flagSettingsDescription);
             guiInventory.addIcon(flagItem, invIndex);
 

@@ -8,6 +8,7 @@ import net.alex9849.arm.flaggroups.FlagGroup;
 import net.alex9849.arm.gui.Gui;
 import net.alex9849.arm.minifeatures.PlayerRegionRelationship;
 import net.alex9849.arm.regions.Region;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -48,7 +49,7 @@ public class FlageditorCommand extends BasicArmCommand {
             throw new InputException(player, Messages.REGION_NOT_OWN);
         }
 
-        Gui.openFlagEditor(player, selRegion, 0, p -> p.closeInventory());
+        Gui.openFlagEditor(player, selRegion, 0, p -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "dm open dzialka "+p.getName()));
         return true;
     }
 

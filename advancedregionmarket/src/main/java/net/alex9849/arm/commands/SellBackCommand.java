@@ -34,10 +34,12 @@ public class SellBackCommand extends BasicArmCommand {
                     .getRegionbyNameAndWorldCommands(command.split(" ")[1], player.getLocation().getWorld().getName());
         }
         if (region == null) {
-            region = getPlugin().getRegionManager().getRegionsByLocation(player.getLocation()).get(0);
-            if (region == null) {
+            List<Region> lr = getPlugin().getRegionManager().getRegionsByLocation(player.getLocation());
+            if (lr.isEmpty()) {
                 player.sendMessage("§cMusisz stać na działce, którą chcesz usunąć!");
                 return true;
+            } else {
+                region = lr.get(0);
             }
         }
         if (!region.getRegion().hasOwner(player.getUniqueId())) {

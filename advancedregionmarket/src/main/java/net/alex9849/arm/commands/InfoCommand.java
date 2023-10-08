@@ -1,10 +1,13 @@
 package net.alex9849.arm.commands;
 
 import net.alex9849.arm.AdvancedRegionMarket;
+import net.alex9849.arm.Messages;
 import net.alex9849.arm.Permission;
 import net.alex9849.arm.exceptions.InputException;
 import net.alex9849.arm.minifeatures.PlayerRegionRelationship;
 import net.alex9849.arm.regions.Region;
+import net.alex9849.arm.regions.SellType;
+import net.alex9849.arm.util.UtilMethods;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -32,9 +35,10 @@ public class InfoCommand extends BasicArmCommand {
             selectedRegion = getPlugin().getRegionManager()
                     .getRegionAtPositionOrNameCommand(player, command.split(" ")[1]);
         } else {
-            selectedRegion = getPlugin()
-                    .getRegionManager().getRegionAtPositionOrNameCommand(player, "");
+            selectedRegion = UtilMethods.getRegionAtPlayerPosOrPlayers(player, getPlugin(), SellType.SELL);
+            if (selectedRegion == null) throw new InputException(sender, Messages.REGION_DOES_NOT_EXIST);
         }
+
         selectedRegion.regionInfo(player);
         return true;
     }
@@ -45,6 +49,6 @@ public class InfoCommand extends BasicArmCommand {
             return new ArrayList<>();
         }
         return getPlugin().getRegionManager()
-                .completeTabRegions(player, args[1], PlayerRegionRelationship.ALL, true, true);
+                .completeTabRegions(player, args[1], PlayerRegionRelationship.MEMBER_OR_OWNER, true, true);
     }
 }

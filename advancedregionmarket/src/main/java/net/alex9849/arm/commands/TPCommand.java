@@ -8,6 +8,8 @@ import net.alex9849.arm.exceptions.NoSaveLocationException;
 import net.alex9849.arm.minifeatures.PlayerRegionRelationship;
 import net.alex9849.arm.minifeatures.teleporter.Teleporter;
 import net.alex9849.arm.regions.Region;
+import net.alex9849.arm.regions.SellType;
+import net.alex9849.arm.util.UtilMethods;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -43,7 +45,10 @@ public class TPCommand extends BasicArmCommand {
                 }
             }
         } else {
-            region = getPlugin().getRegionManager().getRegionsByOwner(player.getUniqueId()).get(0);
+            region = UtilMethods.getPlayerRegionBySellType(player.getUniqueId(), getPlugin(), SellType.SELL);
+            if (region == null) {
+                throw new InputException(sender, Messages.REGION_DOES_NOT_EXIST);
+            }
         }
         try {
             Teleporter.teleport(player, region);

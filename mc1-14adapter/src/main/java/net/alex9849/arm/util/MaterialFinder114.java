@@ -15,7 +15,7 @@ public class MaterialFinder114 extends AbstractMaterialFinder {
 
     @Override
     public Material getWallSign() {
-        return Material.OAK_WALL_SIGN;
+        return Material.SPRUCE_WALL_SIGN;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class MaterialFinder114 extends AbstractMaterialFinder {
 
     @Override
     public Material getSign() {
-        return Material.OAK_SIGN;
+        return Material.SPRUCE_SIGN;
     }
 
     @Override

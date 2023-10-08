@@ -37,6 +37,7 @@ public class ArmPlaceholder extends PlaceholderExpansion {
         this.placeholders.add(new RegionPlaceholderPlaceholder(plugin));
         this.placeholders.add(new RegionCountPlaceholder(plugin));
         this.placeholders.add(new LimitPlaceholder(plugin));
+        this.placeholders.add(new CurrentRKTierPlaceholder(plugin));
         return true;
     }
 

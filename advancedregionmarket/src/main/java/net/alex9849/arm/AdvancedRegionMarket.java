@@ -55,6 +55,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.block.*;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
@@ -228,10 +229,7 @@ public class AdvancedRegionMarket extends JavaPlugin {
 
         this.loadCommands();
 
-        getLogger().log(Level.INFO, "Programmed by Alex9849");
-        getLogger().log(Level.INFO, "I'm always searching for better translations of AdvancedRegionMarket. "
-                + "If you've translated the plugin it would be very nice if you would send me your translation via "
-                + "spigot private message! :)");
+        getLogger().log(Level.INFO, "Programmed by Alex9849 modified by Dagrond @ 4Fun4You.pl");
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
             @Override
             public void run() {
@@ -343,6 +341,7 @@ public class AdvancedRegionMarket extends JavaPlugin {
         commands.add(new InfoCommand(this));
         commands.add(new SetTpLocation(this));
         commands.add(new LimitCommand(this));
+        commands.add(new LimityCommand(this));
         commands.add(new OfferCommand(this));
         commands.add(new CreateBackupCommand(this));
         commands.add(new RestoreBackupCommand(this));
@@ -365,6 +364,8 @@ public class AdvancedRegionMarket extends JavaPlugin {
         commands.add(new BuyCommand(this));
         commands.add(new PrzeniesCommand(this));
         commands.add(new UlepszCommand(this));
+        commands.add(new PolubCommand(this));
+        commands.add(new OdlubCommand(this));
         commands.add(new ZmienbiomCommand(this));
         commands.add(new SellBackCommand(this));
         commands.add(new SetSubregionLimit(this));
@@ -380,7 +381,7 @@ public class AdvancedRegionMarket extends JavaPlugin {
         commands.add(new SetProtectionOfContinuance(this));
         commands.add(new AddTimeCommand(this));
 
-        List<String> entityLimtUsage = new ArrayList<>(Arrays.asList("limity [ustawienie]", "limity pomoc"));
+        List<String> entityLimtUsage = new ArrayList<>(Arrays.asList("entitylimit [ustawienie]", "entitylimit pomoc"));
         List<BasicArmCommand> entityLimitCommands = new ArrayList<>();
         entityLimitCommands.add(new CreateCommand(this));
         entityLimitCommands.add(new net.alex9849.arm.entitylimit.commands.DeleteCommand(this));
@@ -860,8 +861,12 @@ public class AdvancedRegionMarket extends JavaPlugin {
                 return this.commandHandler.executeCommand(sender,
                         Messages.getStringList(Arrays.asList(args), x -> x, " "), commandsLabel);
             } else {
-                String pluginversion = this.getDescription().getVersion();
-                sender.sendMessage(Messages.ARM_BASIC_COMMAND_MESSAGE.replace("%pluginversion%", pluginversion));
+                if (sender instanceof Player) {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "dm open dzialka "+ sender.getName());
+                } else {
+                    String pluginversion = this.getDescription().getVersion();
+                    sender.sendMessage(Messages.ARM_BASIC_COMMAND_MESSAGE.replace("%pluginversion%", pluginversion));
+                }
                 return true;
             }
         } catch (InputException inputException) {

@@ -151,6 +151,7 @@ public class Permission {
     public static final String ARM_HELP = "arm.help";
     public static final String ARM_LIMIT = "arm.limit.";
     public static final String ARM_INACTIVITY_EXPIRATION = "arm.inactivityexpiration.";
+    public static final String MEMBER_LIMITY = "arm.member.limity";
 
     public static boolean hasAnySubregionCreatePermission(CommandSender sender) {
         return (sender.hasPermission(SUBREGION_CREATE_SELL)) || (sender.hasPermission(SUBREGION_CREATE_RENT)) || (sender.hasPermission(SUBREGION_CREATE_CONTRACT));
