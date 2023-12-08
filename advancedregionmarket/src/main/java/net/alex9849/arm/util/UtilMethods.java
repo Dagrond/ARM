@@ -3,6 +3,8 @@ package net.alex9849.arm.util;
 import net.alex9849.arm.AdvancedRegionMarket;
 import net.alex9849.arm.regions.Region;
 import net.alex9849.arm.regions.SellType;
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import java.io.File;
@@ -18,6 +20,15 @@ public class UtilMethods {
             }
         }
         file.delete();
+    }
+
+    public static OfflinePlayer getOfflinePlayer(String name) {
+        for (OfflinePlayer op : Bukkit.getOfflinePlayers()) {
+            if (op.getName().equalsIgnoreCase(name)) {
+                return op;
+            }
+        }
+        return null;
     }
 
     public static Region getPlayerRegionBySellType(UUID player, AdvancedRegionMarket arm, SellType type) {

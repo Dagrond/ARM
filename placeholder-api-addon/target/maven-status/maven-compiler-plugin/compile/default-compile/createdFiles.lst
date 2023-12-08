@@ -1,4 +1,5 @@
 net\alex9849\advancedregionmarket\placeholders\implementations\OwnedRegionsPlaceholder.class
+net\alex9849\advancedregionmarket\placeholders\implementations\CurrentRKTierPlaceholder.class
 net\alex9849\advancedregionmarket\placeholders\ArmPlaceholder.class
 net\alex9849\advancedregionmarket\placeholders\implementations\RegionIdAtLocationPlaceholder.class
 net\alex9849\advancedregionmarket\placeholders\implementations\RegionCountPlaceholder.class

@@ -29,6 +29,7 @@ net\alex9849\arm\commands\HelpCommand.class
 net\alex9849\arm\handler\listener\SignClickListener.class
 net\alex9849\arm\commands\SetHotelCommand.class
 net\alex9849\arm\subregions\commands\SetHotelCommand.class
+net\alex9849\arm\commands\PolubCommand.class
 net\alex9849\arm\presets\commands\InactivityResetResetCommand.class
 net\alex9849\arm\AdvancedRegionMarket$2.class
 net\alex9849\arm\commands\BasicArmCommand.class
@@ -71,6 +72,7 @@ net\alex9849\arm\regions\price\ContractPrice.class
 net\alex9849\arm\commands\SetFlaggroupCommand.class
 net\alex9849\arm\gui\ClickItem.class
 net\alex9849\arm\regionkind\regionkindcommands\SetItemCommand.class
+net\alex9849\arm\commands\OdlubCommand.class
 net\alex9849\arm\entitylimit\commands\RemoveLimit.class
 net\alex9849\arm\entitylimit\commands\DeleteCommand.class
 net\alex9849\arm\ArmSettings.class
@@ -125,6 +127,7 @@ net\alex9849\arm\handler\listener\BlockModifyListener.class
 net\alex9849\arm\presets\commands\SaveCommand.class
 net\alex9849\arm\handler\listener\SignModifyListener$1.class
 net\alex9849\arm\commands\SetLandLord.class
+net\alex9849\arm\commands\DomCommand.class
 net\alex9849\arm\presets\commands\PresetOptionModifyCommand.class
 net\alex9849\arm\regions\price\Autoprice\AutoPriceCalculation$3.class
 net\alex9849\arm\commands\ExtendCommand.class
@@ -221,6 +224,8 @@ net\alex9849\arm\regionkind\regionkindcommands\RemoveLoreLineCommand.class
 net\alex9849\arm\regionkind\regionkindgroupcommands\DeleteCommand.class
 net\alex9849\arm\minifeatures\teleporter\TeleporterListener.class
 net\alex9849\arm\regions\RegionManager$DummyChunk.class
+net\alex9849\arm\commands\PlotCommand.class
+net\alex9849\arm\commands\LimityCommand.class
 net\alex9849\arm\commands\SignLinkModeCommand.class
 net\alex9849\arm\commands\RegionfinderCommand.class
 net\alex9849\arm\entitylimit\commands\ListCommand.class

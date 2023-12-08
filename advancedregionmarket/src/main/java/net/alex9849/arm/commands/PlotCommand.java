@@ -11,19 +11,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ZmienbiomCommand extends BasicArmCommand {
+public class PlotCommand extends BasicArmCommand {
 
-    public ZmienbiomCommand(AdvancedRegionMarket plugin) {
-        super(false, plugin, "zmienbiom",
-                Arrays.asList("(?i)zmienbiom", "biom"),
-                Arrays.asList("zmienbiom", "biom"),
+    public PlotCommand(AdvancedRegionMarket plugin) {
+        super(false, plugin, "plot",
+                Arrays.asList("(?i)plot", "plot"),
+                Arrays.asList("plot"),
                 Arrays.asList(Permission.MEMBER_MOVE));
     }
 
     @Override
     protected boolean runCommandLogic(CommandSender sender, String command, String commandLabel) throws InputException {
         Player player = (Player) sender;
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "dm open dzialka_biom "+player.getName());
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "dm open dzialka_plot "+player.getName());
         return true;
     }
 

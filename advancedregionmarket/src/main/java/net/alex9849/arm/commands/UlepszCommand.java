@@ -23,7 +23,7 @@ public class UlepszCommand extends BasicArmCommand {
     @Override
     protected boolean runCommandLogic(CommandSender sender, String command, String commandLabel) throws InputException {
         Player player = (Player) sender;
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "dm open ulepsz "+player.getName());
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "dm open dzialka_ulepsz "+player.getName());
         return true;
     }
 

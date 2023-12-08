@@ -6,6 +6,7 @@ import net.alex9849.arm.Permission;
 import net.alex9849.arm.exceptions.InputException;
 import net.alex9849.arm.handler.CommandHandler;
 import net.alex9849.arm.regions.Region;
+import net.alex9849.arm.util.UtilMethods;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -28,16 +29,20 @@ public class ListRegionsCommand extends BasicArmCommand {
 
     @Override
     protected boolean runCommandLogic(CommandSender sender, String command, String commandLabel) throws InputException {
-        String playerName = sender.getName();
+        OfflinePlayer oplayer = null;
         if (command.matches(this.regex_with_args)) {
             String[] args = command.split(" ");
             if(!sender.getName().equalsIgnoreCase(args[1]) && !sender.hasPermission(Permission.ADMIN_LISTREGIONS)) {
                 throw new InputException(sender, Messages.NO_PERMISSION);
             }
-            playerName = args[1];
+            if (Bukkit.getPlayer(args[1]) != null) {
+                oplayer = Bukkit.getOfflinePlayer(args[1]);
+            } else {
+                oplayer = UtilMethods.getOfflinePlayer(args[1]);
+            }
+        } else {
+            oplayer = Bukkit.getOfflinePlayer(sender.getName());
         }
-
-        OfflinePlayer oplayer = Bukkit.getOfflinePlayer(playerName);
         if (oplayer == null) {
             throw new InputException(sender, Messages.PLAYER_NOT_FOUND);
         }
@@ -46,7 +51,7 @@ public class ListRegionsCommand extends BasicArmCommand {
                 .getRegionManager().getRegionsByOwner(oplayer.getUniqueId());
         List<Region> regionsMember = getPlugin()
                 .getRegionManager().getRegionsByMember(oplayer.getUniqueId());
-        sender.sendMessage(ChatColor.GREEN + "Działki do których należysz:");
+        sender.sendMessage(ChatColor.GREEN + "Działki do których należy "+oplayer.getName()+":");
         sender.sendMessage(ChatColor.WHITE + "Jako Właściciel: " + ChatColor.GREEN + Messages
                 .getStringList(regionsOwner, x -> x.getRegion().getId(), ", "));
         sender.sendMessage(ChatColor.WHITE + "Jako Członek: " + ChatColor.GREEN + Messages

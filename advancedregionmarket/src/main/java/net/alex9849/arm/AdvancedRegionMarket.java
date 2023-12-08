@@ -358,6 +358,7 @@ public class AdvancedRegionMarket extends JavaPlugin {
         commands.add(new TerminateCommand(this));
         commands.add(new ListRegionsCommand(this));
         commands.add(new TpToFreeRegion(this));
+        commands.add(new DomCommand(this));
         commands.add(new TPCommand(this));
         commands.add(new UnsellCommand(this));
         commands.add(new UpdateSchematicCommand(this));
@@ -367,6 +368,7 @@ public class AdvancedRegionMarket extends JavaPlugin {
         commands.add(new PolubCommand(this));
         commands.add(new OdlubCommand(this));
         commands.add(new ZmienbiomCommand(this));
+        commands.add(new PlotCommand(this));
         commands.add(new SellBackCommand(this));
         commands.add(new SetSubregionLimit(this));
         commands.add(new SetMaxMembersCommand(this));

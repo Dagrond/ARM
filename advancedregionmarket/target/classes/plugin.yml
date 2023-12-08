@@ -164,9 +164,7 @@ permissions:
       arm.member.regionfinder: true
       arm.member.regionfinder.tptoregion: true
       arm.member.regionfinder.tptosign: true
-      arm.member.entitylimit.info: true
-      arm.member.entitylimit.check: true
-      arm.member.entitylimit.buyextra: true
+      arm.member.limity: true
       arm.member.tptofreeregion: true
       arm.member.flageditor: true
   arm.subregion.*:
@@ -490,6 +488,9 @@ permissions:
   arm.member.limit:
     description: Allows display your limits
     default: true
+  arm.member.limity:
+    description: Allows display your limits
+    default: true
   arm.member.offer.create:
     description: Allows to send a selloffer to a player
     default: true
@@ -525,13 +526,13 @@ permissions:
     default: true
   arm.member.entitylimit.info:
     description: Allows to display information about an entitylimit
-    default: true
+    default: op
   arm.member.entitylimit.check:
     description: Allows to check the amount of entities inside an owned region
-    default: true
+    default: op
   arm.member.entitylimit.buyextra:
     description: Allows to buy extra entities for a region
-    default: true
+    default: op
   arm.member.tptofreeregion:
     description: Allows to teleport to a free region with a specific regionkind
     default: true

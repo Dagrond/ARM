@@ -28,6 +28,7 @@ C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex98
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\Updater.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\presets\presets\SellPreset.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\regions\SellType.java
+C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\LimityCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\minifeatures\Diagram.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\FlageditorCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\exceptions\OutOfLimitExeption.java
@@ -72,6 +73,7 @@ C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex98
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\presets\PresetSenderPair.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\presets\presets\RentPreset.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\regions\RegionManager.java
+C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\DomCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\minifeatures\teleporter\TeleporterListener.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\entitylimit\commands\InfoCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\regionkind\regionkindgroupcommands\ListCommand.java
@@ -148,6 +150,7 @@ C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex98
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\entitylimit\commands\CreateCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\regions\SellRegion.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\util\TimeUtil.java
+C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\OdlubCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\regions\price\RentPrice.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\RegionOptionModifyCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\handler\listener\EntitySpawnListener.java
@@ -179,6 +182,7 @@ C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex98
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\exceptions\FeatureDisabledException.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\SetMaxMembersCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\regionkind\RegionKindGroup.java
+C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\PolubCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\handler\listener\PlayerJoinQuitEvent.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\minifeatures\PlayerRegionRelationship.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\util\ConcatedIterator.java
@@ -186,6 +190,7 @@ C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex98
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\AddCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\SetHotelCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\regionkind\RegionKindGroupManager.java
+C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\PlotCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\regions\RentRegion.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\commands\BooleanRegionOptionModifyCommand.java
 C:\Users\ossto\Desktop\Pluginy\ARM\advancedregionmarket\src\main\java\net\alex9849\arm\handler\CommandHandler.java
