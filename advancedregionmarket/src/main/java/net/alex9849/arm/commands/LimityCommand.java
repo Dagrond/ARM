@@ -38,7 +38,7 @@ public class LimityCommand extends BasicArmCommand {
         }
         List<Entity> entities = region.getFilteredInsideEntities(false, true,
                 true, true, true, true, true, false,
-                false, false);
+                false, false, false);
 
         player.sendMessage(region.replaceVariables(Messages.ENTITYLIMIT_CHECK_HEADLINE));
         String totalstatus = region.getEntityLimitGroup().replaceVariables(Messages.ENTITYLIMIT_CHECK_PATTERN, entities, region.getExtraTotalEntitys());

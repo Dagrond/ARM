@@ -919,7 +919,7 @@ public class Gui implements Listener {
 
         List<Entity> entities = region.getFilteredInsideEntities(false, true,
                 true, true, true, true, true, false,
-                false, false);
+                false, false, false);
 
         String totalstatus = region.getEntityLimitGroup().replaceVariables(Messages.GUI_ENTITYLIMIT_ITEM_INFO_PATTERN, entities, region.getExtraTotalEntitys());
         if (region.getEntityLimitGroup().getSoftLimit(region.getExtraTotalEntitys()) < region.getEntityLimitGroup().getHardLimit()) {

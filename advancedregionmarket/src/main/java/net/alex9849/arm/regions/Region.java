@@ -1211,7 +1211,7 @@ public abstract class Region implements Saveable {
     public List<Entity> getFilteredInsideEntities(boolean includePlayers, boolean includeHanging, boolean includeMonsters,
                                                   boolean includeAnimals, boolean includeCreatures, boolean includeVehicles,
                                                   boolean includeProjectiles, boolean includeAreaEffectCloud,
-                                                  boolean includeItemFrames, boolean includePaintings) {
+                                                  boolean includeItemFrames, boolean includePaintings, boolean includeArmorStands) {
 
         List<Entity> insideEntitys = this.getInsideEntities(includePlayers);
         List<Entity> result = new ArrayList<>();
@@ -1252,6 +1252,10 @@ public abstract class Region implements Saveable {
             }
 
             if ((selectedEntity instanceof Painting) && includePaintings) {
+                add = true;
+            }
+
+            if ((selectedEntity instanceof ArmorStand)) {
                 add = true;
             }
 

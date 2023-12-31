@@ -38,6 +38,9 @@ public class EntityLimit {
             if (Hanging.class.isAssignableFrom(entityType.getEntityClass())) {
                 entityTypeSet.add(LimitableEntityType.getUniqueLimitableEntityType(entityType.name(), entityType.getEntityClass()));
             }
+            if (ArmorStand.class.isAssignableFrom(entityType.getEntityClass())) {
+                entityTypeSet.add(LimitableEntityType.getUniqueLimitableEntityType(entityType.name(), entityType.getEntityClass()));
+            }
         }
         entityTypeSet.add(LimitableEntityType.getUniqueLimitableEntityType("HANGING", Hanging.class));
         entityTypeSet.add(LimitableEntityType.getUniqueLimitableEntityType("ANIMALS", Animals.class));
@@ -46,6 +49,7 @@ public class EntityLimit {
         entityTypeSet.add(LimitableEntityType.getUniqueLimitableEntityType("VEHICLE", Vehicle.class));
         entityTypeSet.add(LimitableEntityType.getUniqueLimitableEntityType("MINECART", Minecart.class));
         entityTypeSet.add(LimitableEntityType.getUniqueLimitableEntityType("PROJECTILE", Projectile.class));
+        entityTypeSet.add(LimitableEntityType.getUniqueLimitableEntityType("ARMOR_STAND", ArmorStand.class));
         entityTypes = entityTypeSet;
     }
 
